@@ -104,7 +104,29 @@
       animation: shimmer 3s linear infinite;
     }
 
-    .bowl-glow { background: radial-gradient(circle, rgba(249,115,22,0.15) 0%, transparent 70%); }
+    .bowl-glow {
+      background: radial-gradient(circle, rgba(249,115,22,0.15) 0%, transparent 70%);
+    }
+
+    .social-card {
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .social-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px -12px rgba(0,0,0,0.15);
+    }
+    .social-card:active {
+      transform: translateY(-2px) scale(0.98);
+    }
+
+    .back-to-top {
+      transition: all 0.3s ease;
+    }
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px -4px rgba(0,0,0,0.3);
+    }
+    .back-to-top:active { transform: scale(0.92); }
 
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: #fafaf9; }
@@ -115,7 +137,8 @@
 <body class="bg-stone-50 text-stone-900 antialiased overflow-x-hidden">
 
   <!-- NAVBAR -->
-  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300" style="backdrop-filter: blur(12px); background: rgba(250,250,249,0.85);">
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    style="backdrop-filter: blur(12px); background: rgba(250,250,249,0.85);">
     <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="#" class="flex items-center gap-2.5">
         <div class="w-9 h-9 bg-gradient-to-br from-brand-400 to-brand-600 rounded-xl flex items-center justify-center shadow-lg shadow-brand-500/20">
@@ -137,7 +160,6 @@
       <div class="absolute top-20 left-10 w-72 h-72 bg-brand-200/30 rounded-full" style="filter: blur(80px);"></div>
       <div class="absolute bottom-20 right-10 w-80 h-80 bg-amber-200/30 rounded-full" style="filter: blur(80px);"></div>
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-rose-100/20 rounded-full" style="filter: blur(100px);"></div>
-      <div class="absolute top-40 right-1/4 w-48 h-48 bg-emerald-100/25 rounded-full" style="filter: blur(60px);"></div>
     </div>
     <div class="absolute inset-0 pointer-events-none overflow-hidden">
       <span class="absolute text-5xl opacity-10 float-1" style="top:15%; left:8%;">🥭</span>
@@ -147,47 +169,23 @@
       <span class="absolute text-3xl opacity-10 float-5" style="top:40%; left:15%;">🟢</span>
       <span class="absolute text-4xl opacity-10 float-6" style="top:80%; left:20%;">🍯</span>
     </div>
+
     <div class="relative max-w-7xl mx-auto px-6 text-center">
-      <div class="animate-fade-in-up delay-1 inline-flex items-center gap-2 px-4 py-2 bg-white/70 rounded-full border border-stone-200/60 shadow-sm mb-8">
-        <span class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-        <span class="text-xs font-medium text-stone-600">Buka Kamis 30 April 2026 • Segar Setiap Saat</span>
-      </div>
       <h1 class="animate-fade-in-up delay-2 text-5xl md:text-7xl lg:text-8xl font-medium tracking-tighter leading-[1.05] mb-6">
         <span class="text-stone-800">Es Campur</span><br>
-        <span class="gradient-text">Segar & Nikmat</span>
+        <span class="gradient-text">Menyegarkan</span>
       </h1>
-      <p class="animate-fade-in-up delay-3 text-base md:text-lg text-stone-500 max-w-xl mx-auto leading-relaxed mb-10">
-        Racikan sempurna buah segar, cincau, agar-agar, sirup manis yang menyegarkan harimu!!
+
+      <p class="animate-fade-in-up delay-3 text-base md:text-lg text-stone-500 max-w-lg mx-auto leading-relaxed mb-10">
+        Racikan sempurna buah segar, cincau, agar-agar, dan sirup manis yang menyegarkan harimu.
       </p>
-      <div class="animate-fade-in-up delay-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a href="#produk" class="group bg-stone-900 text-stone-50 text-sm font-medium px-8 py-4 rounded-xl hover:bg-stone-800 transition-all duration-300 shadow-xl shadow-stone-900/10 flex items-center gap-2">
+
+      <div class="animate-fade-in-up delay-4">
+        <a href="#produk"
+          class="inline-flex items-center gap-2 bg-stone-900 text-stone-50 text-sm font-medium px-8 py-4 rounded-xl hover:bg-stone-800 transition-all duration-300 shadow-xl shadow-stone-900/10">
           Lihat Menu
-          <iconify-icon icon="lucide:arrow-down" class="group-hover:translate-y-0.5 transition-transform"></iconify-icon>
-        </a>
-        <a href="#keunggulan" class="group text-sm font-medium px-8 py-4 rounded-xl border border-stone-200 bg-white/60 hover:bg-white hover:border-stone-300 transition-all duration-300 flex items-center gap-2 text-stone-700">
-          <iconify-icon icon="lucide:star" class="text-amber-500"></iconify-icon>
-          Kenapa Kami?
         </a>
       </div>
-      <div class="animate-fade-in-up delay-5 mt-16 flex items-center justify-center gap-8 md:gap-14">
-        <div class="text-center">
-          <div class="text-2xl font-semibold text-stone-800">6+</div>
-          <div class="text-xs text-stone-400 mt-1">Isian Buah</div>
-        </div>
-        <div class="w-px h-10 bg-stone-200"></div>
-        <div class="text-center">
-          <div class="text-2xl font-semibold text-stone-800">100%</div>
-          <div class="text-xs text-stone-400 mt-1">Buah Segar</div>
-        </div>
-        <div class="w-px h-10 bg-stone-200"></div>
-        <div class="text-center">
-          <div class="text-2xl font-semibold text-stone-800">⭐ 4.9</div>
-          <div class="text-xs text-stone-400 mt-1">Rating</div>
-        </div>
-      </div>
-    </div>
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-      <iconify-icon icon="lucide:chevron-down" class="text-stone-300 text-xl"></iconify-icon>
     </div>
   </section>
 
@@ -199,9 +197,11 @@
         <h2 class="text-3xl md:text-5xl font-medium tracking-tighter text-stone-800 mb-4">Es Campur Spesial</h2>
         <p class="text-stone-500 max-w-md mx-auto">Dibuat dengan buah pilihan dan racikan sirup rahasia yang bikin nagih!</p>
       </div>
+
       <div class="max-w-4xl mx-auto reveal">
         <div class="bg-white rounded-3xl border border-stone-200/80 shadow-xl shadow-stone-900/5 overflow-hidden">
           <div class="grid md:grid-cols-2">
+            <!-- Gambar -->
             <div class="relative bg-gradient-to-br from-brand-50 via-amber-50 to-emerald-50 p-8 md:p-12 flex items-center justify-center min-h-[320px] overflow-hidden">
               <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div class="orbit-1 absolute text-2xl">🥭</div>
@@ -222,21 +222,26 @@
               <div class="absolute bottom-4 right-4 float-2 text-3xl opacity-60">🍮</div>
               <div class="absolute top-4 right-4 float-3 text-2xl opacity-60">🍯</div>
             </div>
+
+            <!-- Info -->
             <div class="p-8 md:p-10 flex flex-col">
-              <div class="mb-2">
-                <span class="inline-flex items-center gap-1 px-2.5 py-1 bg-emerald-50 text-emerald-600 text-xs font-medium rounded-full">
+              <div class="mb-3">
+                <span class="inline-flex items-center gap-1.5 px-2.5 py-1 bg-emerald-50 text-emerald-600 text-xs font-medium rounded-full">
                   <span class="w-1.5 h-1.5 bg-emerald-400 rounded-full"></span>
                   Tersedia
                 </span>
               </div>
-              <h3 class="text-2xl font-semibold tracking-tight text-stone-800 mb-2">Es Campur Segar</h3>
-              <p class="text-sm text-stone-500 leading-relaxed mb-5">
+
+              <h3 class="text-2xl font-semibold tracking-tight text-stone-800 mb-2">Es Campur</h3>
+              <p class="text-sm text-stone-500 leading-relaxed mb-6">
                 Perpaduan sempurna buah nangka, alpukat, kelapa, cincau, agar-agar dengan sirup manis dan susu segar.
               </p>
-              <div class="mb-6">
+
+              <div class="mb-8">
                 <span class="text-xs font-semibold uppercase tracking-wider text-stone-400 mb-3 block">Isian Lengkap</span>
                 <div id="ingredients-grid" class="flex flex-wrap gap-2"></div>
               </div>
+
               <div class="mt-auto">
                 <div class="flex items-end gap-2">
                   <span class="text-3xl font-bold text-stone-900">Rp 7.000</span>
@@ -250,124 +255,118 @@
     </div>
   </section>
 
-  <!-- WHY CHOOSE US -->
+  <!-- KEUNGGULAN -->
   <section id="keunggulan" class="py-20 relative overflow-hidden">
     <div class="absolute inset-0 pointer-events-none">
       <div class="absolute top-0 right-0 w-64 h-64 bg-brand-100/20 rounded-full" style="filter:blur(80px);"></div>
     </div>
     <div class="max-w-7xl mx-auto px-6 relative">
       <div class="text-center mb-14 reveal">
-        <span class="inline-block text-xs font-semibold uppercase tracking-widest text-brand-500 mb-4">Kenapa Kami?</span>
         <h2 class="text-3xl md:text-4xl font-medium tracking-tighter text-stone-800 mb-4">Keunggulan Es Campur Kami</h2>
+        <p class="text-stone-500 max-w-md mx-auto text-sm">Dibuat dengan penuh perhatian supaya kamu puas setiap gigitan.</p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+      <div class="grid sm:grid-cols-2 gap-5 max-w-3xl mx-auto">
         <div class="reveal bg-white rounded-2xl p-6 border border-stone-200/60 shadow-sm hover:shadow-md hover:border-stone-300 transition-all duration-300 group">
-          <div class="w-12 h-12 bg-brand-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-brand-100 transition-colors">
-            <iconify-icon icon="lucide:leaf" class="text-brand-500 text-xl"></iconify-icon>
-          </div>
-          <h4 class="font-semibold text-stone-800 mb-1.5">100% Segar</h4>
-          <p class="text-sm text-stone-500 leading-relaxed">Buah dipilih langsung setiap hari, dijamin segar dan berkualitas.</p>
-        </div>
-        <div class="reveal bg-white rounded-2xl p-6 border border-stone-200/60 shadow-sm hover:shadow-md hover:border-stone-300 transition-all duration-300 group" style="transition-delay:0.1s;">
-          <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-100 transition-colors">
-            <iconify-icon icon="lucide:heart" class="text-emerald-500 text-xl"></iconify-icon>
+          <div class="w-11 h-11 bg-emerald-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-emerald-100 transition-colors">
+            <iconify-icon icon="lucide:heart" class="text-emerald-500 text-lg"></iconify-icon>
           </div>
           <h4 class="font-semibold text-stone-800 mb-1.5">Hygienis</h4>
           <p class="text-sm text-stone-500 leading-relaxed">Dibuat dengan peralatan bersih dan menjaga kebersihan standar.</p>
         </div>
-        <div class="reveal bg-white rounded-2xl p-6 border border-stone-200/60 shadow-sm hover:shadow-md hover:border-stone-300 transition-all duration-300 group" style="transition-delay:0.2s;">
-          <div class="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-amber-100 transition-colors">
-            <iconify-icon icon="lucide:wallet" class="text-amber-500 text-xl"></iconify-icon>
+        <div class="reveal bg-white rounded-2xl p-6 border border-stone-200/60 shadow-sm hover:shadow-md hover:border-stone-300 transition-all duration-300 group" style="transition-delay:0.1s;">
+          <div class="w-11 h-11 bg-amber-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-amber-100 transition-colors">
+            <iconify-icon icon="lucide:wallet" class="text-amber-500 text-lg"></iconify-icon>
           </div>
           <h4 class="font-semibold text-stone-800 mb-1.5">Murah Meriah</h4>
           <p class="text-sm text-stone-500 leading-relaxed">Harga bersahabat di kantong pelajar, tapi rasa bintang lima!</p>
-        </div>
-        <div class="reveal bg-white rounded-2xl p-6 border border-stone-200/60 shadow-sm hover:shadow-md hover:border-stone-300 transition-all duration-300 group" style="transition-delay:0.3s;">
-          <div class="w-12 h-12 bg-rose-50 rounded-xl flex items-center justify-center mb-4 group-hover:bg-rose-100 transition-colors">
-            <iconify-icon icon="lucide:zap" class="text-rose-500 text-xl"></iconify-icon>
-          </div>
-          <h4 class="font-semibold text-stone-800 mb-1.5">Cepat Saji</h4>
-          <p class="text-sm text-stone-500 leading-relaxed">Tinggal pesan, langsung jadi. Ga perlu lama-lama nunggu!</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
-  <footer id="kontak" class="bg-stone-900 text-stone-300 relative overflow-hidden">
-    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-brand-500/30 to-transparent"></div>
-    <div class="absolute top-20 right-20 w-48 h-48 bg-brand-500/5 rounded-full" style="filter:blur(60px);"></div>
-    <div class="max-w-7xl mx-auto px-6 py-16 md:py-20 relative">
-      <div class="grid md:grid-cols-3 gap-12 md:gap-8">
-        <div>
-          <div class="flex items-center gap-2.5 mb-4">
-            <div class="w-9 h-9 bg-gradient-to-br from-brand-400 to-brand-600 rounded-xl flex items-center justify-center">
-              <span class="text-white text-lg">🥣</span>
-            </div>
-            <span class="font-semibold text-white tracking-tight">ESCAMPE</span>
-          </div>
-          <p class="text-sm text-stone-400 leading-relaxed mb-6">
-            Es campur racikan spesial dengan buah segar pilihan. Menyegarkan di setiap tegukan! 🧊
-          </p>
-          <div class="flex items-center gap-1 text-sm text-stone-500">
-            <iconify-icon icon="lucide:map-pin" class="text-brand-400"></iconify-icon>
-            <span>Stand Es Campur, Sekolah</span>
-          </div>
-        </div>
-        <div>
-          <h4 class="text-sm font-semibold text-white mb-4">Menu Cepat</h4>
-          <ul class="space-y-3">
-            <li><a href="#produk" class="text-sm text-stone-400 hover:text-brand-400 transition-colors flex items-center gap-2"><iconify-icon icon="lucide:arrow-right" class="text-xs"></iconify-icon>Produk Kami</a></li>
-            <li><a href="#keunggulan" class="text-sm text-stone-400 hover:text-brand-400 transition-colors flex items-center gap-2"><iconify-icon icon="lucide:arrow-right" class="text-xs"></iconify-icon>Keunggulan</a></li>
-            <li><a href="#kontak" class="text-sm text-stone-400 hover:text-brand-400 transition-colors flex items-center gap-2"><iconify-icon icon="lucide:arrow-right" class="text-xs"></iconify-icon>Kontak</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-sm font-semibold text-white mb-4">Ada Pertanyaan?</h4>
-          <p class="text-sm text-stone-400 leading-relaxed mb-5">Butuh info lebih lanjut? Langsung chat kami aja di WhatsApp.</p>
-          <div class="space-y-3">
-            <a href="https://wa.me/6287717623799" target="_blank"
-              class="flex items-center gap-3 px-4 py-3 bg-stone-800/50 hover:bg-stone-800 rounded-xl border border-stone-700/50 hover:border-emerald-500/30 transition-all duration-300 group">
-              <div class="w-9 h-9 bg-emerald-500/10 rounded-lg flex items-center justify-center group-hover:bg-emerald-500/20 transition-colors">
-                <iconify-icon icon="simple-icons:whatsapp" class="text-emerald-400 text-lg"></iconify-icon>
-              </div>
-              <div>
-                <div class="text-sm font-medium text-stone-200 group-hover:text-white transition-colors">WhatsApp</div>
-                <div class="text-xs text-stone-500">Tanya-tanya dulu</div>
-              </div>
-              <iconify-icon icon="lucide:external-link" class="text-stone-600 group-hover:text-stone-400 text-xs ml-auto transition-colors"></iconify-icon>
-            </a>
-            <a href="https://www.instagram.com/apecampura?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank"
-              class="flex items-center gap-3 px-4 py-3 bg-stone-800/50 hover:bg-stone-800 rounded-xl border border-stone-700/50 hover:border-pink-500/30 transition-all duration-300 group">
-              <div class="w-9 h-9 bg-pink-500/10 rounded-lg flex items-center justify-center group-hover:bg-pink-500/20 transition-colors">
-                <iconify-icon icon="simple-icons:instagram" class="text-pink-400 text-lg"></iconify-icon>
-              </div>
-              <div>
-                <div class="text-sm font-medium text-stone-200 group-hover:text-white transition-colors">Instagram</div>
-                <div class="text-xs text-stone-500">@apecampura</div>
-              </div>
-              <iconify-icon icon="lucide:external-link" class="text-stone-600 group-hover:text-stone-400 text-xs ml-auto transition-colors"></iconify-icon>
-            </a>
-          </div>
-        </div>
+  <!-- SOSIAL MEDIA -->
+  <section id="kontak" class="relative overflow-hidden">
+    <div class="relative bg-gradient-to-br from-brand-400 via-brand-500 to-brand-600 px-6 pt-16 pb-20 md:pt-20 md:pb-28">
+      <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div class="absolute -top-20 -left-20 w-64 h-64 bg-white/10 rounded-full" style="filter:blur(40px);"></div>
+        <div class="absolute -bottom-16 -right-16 w-72 h-72 bg-brand-700/30 rounded-full" style="filter:blur(50px);"></div>
+        <div class="absolute top-1/3 right-1/4 w-32 h-32 bg-amber-300/20 rounded-full" style="filter:blur(30px);"></div>
+        <span class="absolute text-6xl opacity-[0.07] float-1" style="top:10%; left:5%;">🥭</span>
+        <span class="absolute text-5xl opacity-[0.07] float-2" style="top:60%; right:8%;">🥥</span>
+        <span class="absolute text-4xl opacity-[0.07] float-3" style="bottom:15%; left:20%;">🍮</span>
       </div>
-      <div class="border-t border-stone-800 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-        <p class="text-xs text-stone-500">© 2026 ESCAMPE.</p>
-        <p class="text-xs text-stone-600 flex items-center gap-1">
-          Dibuat dengan <iconify-icon icon="lucide:heart" class="text-red-400 text-[10px]"></iconify-icon> untuk pelanggan setia
+
+      <div class="relative max-w-2xl mx-auto text-center reveal">
+        <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/15 rounded-full border border-white/20 mb-6" style="backdrop-filter:blur(8px);">
+          <iconify-icon icon="lucide:share-2" class="text-white/80 text-xs"></iconify-icon>
+          <span class="text-[11px] font-semibold uppercase tracking-[0.15em] text-white/90">Sosial Media</span>
+        </div>
+
+        <h2 class="text-3xl md:text-5xl font-semibold text-white tracking-tight mb-3">Follow Kami</h2>
+        <p class="text-sm md:text-base text-white/70 mb-10 max-w-sm mx-auto">
+          Biar ga ketinggalan info terbaru, promo, dan update menu!
         </p>
+
+        <div class="grid sm:grid-cols-2 gap-4 max-w-md mx-auto">
+          <a href="https://www.instagram.com/apecampura" target="_blank"
+            class="social-card bg-white rounded-2xl p-5 flex items-center gap-4 shadow-lg shadow-brand-600/20 border border-white/50 no-underline">
+            <div class="w-12 h-12 bg-gradient-to-br from-pink-500 via-red-500 to-amber-500 rounded-xl flex items-center justify-center shadow-md shadow-pink-500/25 flex-shrink-0">
+              <iconify-icon icon="simple-icons:instagram" class="text-white text-xl"></iconify-icon>
+            </div>
+            <div class="text-left">
+              <div class="text-sm font-semibold text-stone-800">Instagram</div>
+              <div class="text-xs text-stone-400 mt-0.5">@apecampura</div>
+            </div>
+            <iconify-icon icon="lucide:external-link" class="text-stone-300 text-sm ml-auto flex-shrink-0"></iconify-icon>
+          </a>
+
+          <a href="https://wa.me/6287717623799" target="_blank"
+            class="social-card bg-white rounded-2xl p-5 flex items-center gap-4 shadow-lg shadow-brand-600/20 border border-white/50 no-underline">
+            <div class="w-12 h-12 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-xl flex items-center justify-center shadow-md shadow-emerald-500/25 flex-shrink-0">
+              <iconify-icon icon="simple-icons:whatsapp" class="text-white text-xl"></iconify-icon>
+            </div>
+            <div class="text-left">
+              <div class="text-sm font-semibold text-stone-800">WhatsApp</div>
+              <div class="text-xs text-stone-400 mt-0.5">Tanya-tanya dulu</div>
+            </div>
+            <iconify-icon icon="lucide:external-link" class="text-stone-300 text-sm ml-auto flex-shrink-0"></iconify-icon>
+          </a>
+        </div>
       </div>
     </div>
-  </footer>
 
-  <!-- FLOATING WA — Hanya untuk tanya -->
-  <a href="https://wa.me/6287717623799" target="_blank"
-    class="fixed bottom-6 right-6 z-50 w-14 h-14 bg-emerald-500 hover:bg-emerald-600 rounded-full flex items-center justify-center shadow-xl shadow-emerald-500/30 hover:shadow-emerald-500/40 transition-all duration-300 hover:scale-110 group">
-    <iconify-icon icon="simple-icons:whatsapp" class="text-white text-2xl"></iconify-icon>
-    <span class="absolute right-full mr-3 bg-stone-800 text-white text-xs font-medium px-3 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-      Ada pertanyaan? Chat kami
-    </span>
-  </a>
+    <div class="bg-stone-900 px-6 py-5">
+      <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <div class="w-7 h-7 bg-gradient-to-br from-brand-400 to-brand-600 rounded-lg flex items-center justify-center flex-shrink-0">
+            <span class="text-white text-xs">🥣</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-sm font-semibold text-white tracking-tight">ESCAMPE</span>
+            <span class="text-stone-600">·</span>
+            <span class="text-xs text-stone-500">Stand Es Campur</span>
+          </div>
+        </div>
+        <p class="text-xs text-stone-600">© 2026 ESCAMPE</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOATING BUTTONS -->
+  <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
+    <a href="#" id="back-to-top"
+      class="back-to-top w-11 h-11 bg-stone-800 hover:bg-stone-700 rounded-full flex items-center justify-center shadow-xl shadow-stone-800/30 opacity-0 pointer-events-none transition-all duration-300">
+      <iconify-icon icon="lucide:arrow-up" class="text-white"></iconify-icon>
+    </a>
+    <a href="https://wa.me/6287717623799" target="_blank"
+      class="w-14 h-14 bg-emerald-500 hover:bg-emerald-600 rounded-full flex items-center justify-center shadow-xl shadow-emerald-500/30 hover:shadow-emerald-500/40 transition-all duration-300 hover:scale-110 group">
+      <iconify-icon icon="simple-icons:whatsapp" class="text-white text-2xl"></iconify-icon>
+      <span class="absolute right-full mr-3 bg-stone-800 text-white text-xs font-medium px-3 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+        Ada pertanyaan? Chat kami
+      </span>
+    </a>
+  </div>
 
   <!-- JS -->
   <script>
@@ -382,7 +381,7 @@
 
     document.getElementById('ingredients-grid').innerHTML = ingredients.map(item => `
       <div class="ingredient-chip inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border text-xs font-medium cursor-default select-none"
-        style="background: ${item.color}15; border-color: ${item.color}30; color: ${item.color === '#E5E7EB' || item.color === '#A8A29E' ? '#57534e' : item.color};"
+        style="background: ${item.color}15; border-color: ${item.color}30; color: ${item.color === '#A8A29E' ? '#57534e' : item.color};"
         onclick="this.classList.remove('clicked'); void this.offsetWidth; this.classList.add('clicked');"
         title="${item.desc}">
         <span class="text-sm">${item.emoji}</span>
@@ -392,12 +391,22 @@
 
     window.addEventListener('scroll', () => {
       const navbar = document.getElementById('navbar');
+      const btn = document.getElementById('back-to-top');
+
       if (window.scrollY > 50) {
         navbar.style.borderBottom = '1px solid rgba(231,229,228,0.6)';
         navbar.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)';
       } else {
         navbar.style.borderBottom = 'none';
         navbar.style.boxShadow = 'none';
+      }
+
+      if (window.scrollY > 600) {
+        btn.style.opacity = '1';
+        btn.style.pointerEvents = 'auto';
+      } else {
+        btn.style.opacity = '0';
+        btn.style.pointerEvents = 'none';
       }
     });
 
